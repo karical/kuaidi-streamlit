@@ -9,3 +9,4 @@ ollama
 opencv-python-headless
 opencv-python
 cnocr
+setuptools>=65.5.0
