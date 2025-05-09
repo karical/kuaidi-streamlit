@@ -69,7 +69,7 @@ def crop_express_image(image, detections):
 
 IMG_SIZE = [488, 712]
 GRID_SIZE = [45, 31]
-def load_uvdoc_model(ckpt_path, map_location=None):
+def load_uvdoc_model(ckpt_path, map_location):
     model = UVDocnet(num_filter=32, kernel_size=5)
     ckpt = torch.load(ckpt_path, map_location=map_location)
     model.load_state_dict(ckpt["model_state"])
