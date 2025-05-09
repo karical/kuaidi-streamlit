@@ -71,7 +71,7 @@ with st.sidebar:
     # 切换校正模型
     if st.session_state.get("current_unwrap") != sel_unwrap:
         st.session_state.unwrap_model = load_uvdoc_model(
-            os.path.join("./weights/unwrap_model", sel_unwrap)
+            os.path.join("./weights/unwrap_model", sel_unwrap),map_location=torch.device("cpu")
         )
         st.session_state.current_unwrap = sel_unwrap
     ocr_prompt = st.text_area("OCR 提示词", OCR_PROMPT_DEFAULT)

@@ -90,7 +90,7 @@ def unwarp_img(ckpt_path, img_path, img_size, model=None):
     device = torch.device("cpu")
     # 加载模型
     if model is None:
-        model = load_uvdoc_model(ckpt_path)
+        model = load_uvdoc_model(ckpt_path,map_location=torch.device("cpu"))
     model.to(device)
     model.eval()
 
