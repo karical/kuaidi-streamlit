@@ -5,6 +5,7 @@ import io
 import numpy as np
 import cv2
 import tempfile
+import torch
 
 from backend import (
     load_uvdoc_model, unwarp_img,
@@ -52,9 +53,7 @@ with cols[3]:
 # 2️⃣ 初始化模型
 with st.spinner("正在初始化模型..."):
     if "unwrap_model" not in st.session_state:
-        st.session_state.unwrap_model = load_uvdoc_model(
-            "./weights/unwrap_model/best_model.pkl"
-        )
+        st.session_state.unwrap_model = load_uvdoc_model("./weights/unwrap_model/best_model.pkl",map_location=torch.device("cpu"))
 
 # 侧边栏配置
 with st.sidebar:
