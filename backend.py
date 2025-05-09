@@ -11,7 +11,7 @@ from ultralytics import YOLO
 import streamlit as st
 from utils.clean import letterbox, check_img_size, non_max_suppression, scale_coords
 from utils.plots import plot_one_box, colors
-from ./resource/depencies/model import UVDocnet
+from utils.model import UVDocnet
 import torch.nn.functional as F
 
 def load_model(model_path):
