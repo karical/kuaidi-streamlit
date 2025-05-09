@@ -69,12 +69,12 @@ def crop_express_image(image, detections):
 
 IMG_SIZE = [488, 712]
 GRID_SIZE = [45, 31]
-def load_uvdoc_model(ckpt_path):
-
+def load_uvdoc_model(ckpt_path, map_location=None):
     model = UVDocnet(num_filter=32, kernel_size=5)
-    ckpt = torch.load(ckpt_path)
+    ckpt = torch.load(ckpt_path, map_location=map_location)
     model.load_state_dict(ckpt["model_state"])
     return model
+
 
 
 def bilinear_unwarping(warped_img, point_positions, img_size):
