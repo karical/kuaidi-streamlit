@@ -1,0 +1,11 @@
+ultralytics
+pillow
+streamlit>=1.44.1
+numpy==1.24.1
+torch==2.5.1
+onnxruntime
+ultralytics
+ollama
+opencv-python-headless
+opencv-python
+cnocr
